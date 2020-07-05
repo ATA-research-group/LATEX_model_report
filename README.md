@@ -1,2 +1,2 @@
 # Galapagos-Report
- LATEX template for reprots
+ LATEX template for reports of RG ATA
