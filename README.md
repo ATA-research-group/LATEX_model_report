@@ -1,1 +1,2 @@
-# LATEX_model_report
+# Galapagos-Report
+ LATEX template for reprots

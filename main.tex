@@ -1,0 +1,497 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Template for lab reports used at STIMA
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1q       
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Sets the document class for the document
+% Openany is added to remove the book style of starting every new chapter on an odd page (not needed for reports)
+\documentclass[10pt,english, openany]{book}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Loading packages that alter the style
+\usepackage[]{graphicx}
+\usepackage[]{color}
+\usepackage{alltt}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{3}
+\setlength{\parskip}{\smallskipamount}
+\setlength{\parindent}{0pt}
+
+% Set page margins
+\usepackage[top=100pt,bottom=100pt,left=68pt,right=66pt]{geometry}
+
+% Package used for placeholder text
+\usepackage{lipsum}
+
+% Prevents LaTeX from filling out a page to the bottom
+\raggedbottom
+
+% Adding both languages
+\usepackage[english, spanish]{babel}
+
+% All page numbers positioned at the bottom of the page
+\usepackage{fancyhdr}
+\fancyhf{} % clear all header and footers
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0pt} % remove the header rule
+\pagestyle{fancy}
+
+% Changes the style of chapter headings
+\usepackage{titlesec}
+\titleformat{\chapter}
+   {\normalfont\LARGE\bfseries}{\thechapter.}{1em}{}
+% Change distance between chapter header and text
+\titlespacing{\chapter}{0pt}{50pt}{2\baselineskip}
+
+% Adds table captions above the table per default
+\usepackage{float}
+\floatstyle{plaintop}
+\restylefloat{table}
+
+% Adds space between caption and table
+\usepackage[tableposition=top]{caption}
+
+% Adds hyperlinks to references and ToC
+\usepackage{hyperref}
+\hypersetup{hidelinks,linkcolor = black} % Changes the link color to black and hides the hideous red border that usually is created
+
+% If multiple images are to be added, a folder (path) with all the images can be added here 
+\graphicspath{ {Figures/} }
+
+% Separates the first part of the report/thesis in Roman numerals
+\frontmatter
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Starts the document
+\begin{document}
+
+%%% Selects the language to be used for the first couple of pages
+\selectlanguage{english}
+
+%%%%% Adds the title page
+\begin{titlepage}
+	\clearpage\thispagestyle{empty}
+	\centering
+	\vspace{1cm}
+
+	% Titles
+	% Information about the University
+	{\normalsize Aeronautics and Applied \\ 
+		Thermofluids (ATA) Research Group \\
+		Escuela Politécnica Nacional \par}
+		\vspace{3cm}
+	{\Huge \textbf{Technified monitoring of Biodiversity in Galapagos using Unmanned Aerial Platforms}} \\
+	%\vspace{1cm}
+	%{\large \textbf{xxxxx} \par}
+	\vspace{4cm}
+	{\normalsize Santigo Bonilla \\ % \\ specifies a new line
+	             FIRST LAST \\
+	             FIRST LAST\par}
+	\vspace{5cm}
+    
+    \centering \includegraphics[scale=0.7]{logo_ATA.png}
+    
+    \vspace{0.5cm}
+		
+	% Set the date
+	{\normalsize 30-06-2020 \par}
+	
+	\pagebreak
+
+\end{titlepage}
+
+% Adds a table of contents
+\tableofcontents{}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% Text body starts here!
+\mainmatter
+
+\chapter{Summary}\label{chapt:sum}
+[\textit{Briefly describe in 500 words an overview about technified monitoring in Galapagos for Biodiversity.}]
+
+\chapter{Problem definition and background}
+%[\textit{Introduce the problem and state the objective of your work. Briefly present the state of the art regarding the chosen topic and report a reference solution (i.e. numerical or experimental, or the exact one if available). Here should be at least 25 reference included}]%
+
+The Galapagos archipelago is known for its great biodiversity, which depends on the different habitats that exist on the islands, in which you can find forests in the highlands, sand dunes, scrub areas and even a variety of reefs and corals, where they are inhabited by different endemic species that inspired Darwin and his theory of evolution.
+
+%%LETS BE MORE GENERAL TALKING ABOUT REMOTE SENSING APPLICATIONS, NOT JUST BIODIVERSITY
+
+
+Currently, to guarantee the island's biodiversity, it is necessary to provide protection to key species. "A key species is one that has a significant impact on the ecosystem as a whole." 
+
+Having a fragile and important ecosystem, it is necessary to regularly monitor these species, which inhabit the different Galapagos islands, since, if they increased or decreased, they would directly involve many other species in the same ecosystem. This can be done through the use of UAVs (unmanned aerial vehicles), which is a flight system that does not require an onboard pilot, the missions that are granted can be pre-programmed, or controlled by an operator on the ground. remote. \cite{BenitoCarrasco2015}
+
+As the flora and fauna of these islands is known, it can be seriously affected by invasive species, this being the case also requires a strenuous control of these. By applying the appropriate use of different UAVs, invasive species can be eradicated more quickly, a clear example is drone fumigation.
+
+Plastic pollutants also greatly influence the fauna and people who inhabit the Galapagos Islands, being the cause of many deaths of animals that are part of the key species, and in a certain way getting used to living with this type of contamination, For this reason, UAVs are used to stop this problem, making it possible to carry out a study and obtain optimal solutions that guarantee the safety of life found there.
+
+As a result of all the aforementioned problems, this research work aims to analyze the intervention of the different remote platforms that help and facilitate the necessary controls to allow the islands to keep their biodiversity intact as much as possible.
+
+There are different types of monitoring in animals, one of them is by capturing the animal, from which information on the sex, age, weight, and size of the individuals is obtained. When enough data has been obtained the animal is released and tagged so that in the future it can be captured again and analyze the changes. This is a very expensive method, so in countries with a low budget directed towards biodiversity conservation, it is necessary to look for alternative methods.\cite{Arevalo2001}
+
+The methods in which the animal is not captured can be direct or indirect.
+
+Basically, the direct methods consist of "making counts of the animals observed on a certain route".\cite{Arevalo2001} This type of monitoring must be carried out when the species is most active, it may be in the morning in the afternoon and even at night by animals with nocturnal habits.
+
+Indirect methods "are fundamentally based on the interpretation of the traces that animals leave in their environment" \cite{Arevalo2001}. All kinds of traces are important, tracks, excrement, burrows, body parts, etc.
+
+Both the direct and indirect methods must be carried out in fixed places, that is, the routes can have 3km by 60m wide. To avoid the observation space limitation, it is necessary to use remote platforms.
+
+The new UAV technology represents a new frontier for research, since its constant development allows its performance in multiple fields to be satisfactory, although they were used in the military field, the availability of these in the market makes it an important tool that facilitates different explorations such as the one discussed in this research, allowing the collection of a large amount of data in addition to conducting studies on the biological processes of different species, which is very convenient due to the constant movement of these which is difficult to control.
+
+Among the main characteristics that encourage the use of this technology are:
+
+\begin{itemize}
+    \item Ease of moving quickly on uneven terrain.
+    \item Climatic "independence" depending on its construction materials.
+    \item Its use can be simple for the user, or it can have programmed routes.
+    \item When collecting information, it can repel different obstacles thanks to the different sensors it has.
+    \cite{Ecol2018}
+\end{itemize}
+
+There are precedents for the use of UAVs in research related to fauna and habitat characterization. The first projects to make use of these "took place in the first half of the 2000s, using drones derived from model aircraft." \cite{Productividad2017}
+
+In countries like Mexico this tool is used for the biodiversity conservation sectors and the technical development sectors. The figure shows the different studies in which the drones were applied.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[scale= 0.35]{Dron.jpeg}
+    \caption{"Example of studies, cases in which drones have been applied for \cite{Productividad2017} }
+    \label{fig11:spect}
+\end{figure}
+
+\section{Literature review}
+
+In this section  is described the state of the art of the various applications of remote sensing for management and conservation of the Galapagos Islands.
+
+\subsection{Plastic Pollution}
+
+Plastic is present in all parts of the world, and can be found in all kinds of markets, useful for people's daily lives. For this reason, the planet was flogged with excessive amounts of this waste, being one of the major pollutants that seriously affect the planet's biodiversity.
+
+According to the WWF (World Wild Fund for Nature), "worldwide, humans produce around 1,300 million tons of plastic waste per year, a figure that will increase to 2,200 million by 2025". \cite{WWF}
+
+In countries like Ecuador, where garbage collection services are limited, some of this plastic waste inevitably ends up in the oceans or on beaches, where it has the potential to harm wildlife and human health.
+
+According to records of the polluting residues collected by the MAE (Ministry of the Environment), in four regions, they are alarming as shown in the following graphs, which contain the wastes with the greatest use in Ecuador.As can be seen in the figure \ref{fig1:spect}.
+
+\vspace{1cm}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[scale= 0.35]{Regiones.jpeg}
+    \caption{Regions of Ecuador \cite{Infograma} }
+    \label{fig1:spect}
+\end{figure}
+    
+\pagebreak
+
+Depending on the color, there are different types of plastics:
+
+\begin{itemize}
+    \item Red: food containers
+    \item Yellow: plastic bottles
+    \item Blue: container lids
+    \item Purple: cigarette butts 
+\end{itemize}
+
+Unfortunately, the tons of garbage that arrive through the ocean considerably affect important places such as the Galapagos Islands. Being such a fragile ecosystem, different debris can bring invasive species, such as the marine worm that arrives inside plastic bottles and now inhabits these islands, affecting the fauna of this place. \cite{WWF}
+
+It is not only the nearby countries that pollute, on the contrary, much of the American continent contributes with plastic garbage that reaches the Galapagos Islands. Nicoleta Tsakali, states that "Each country, depending on its economic and industrial growth, generates a different amount of plastic per capita". \cite{Schofield2020} In Figure \ref{fig5:spect} you can visually appreciate the estimated amount of plastic that reaches these islands.
+
+\vspace{1cm}
+
+\begin{figure}[h!]
+    \centering\includegraphics[scale= 0.3]{Tabla_1.jpeg}
+    \caption{Debris that could enter the Pacific Ocean per year and in turn could reach the Pacific Ocean. \cite{Tsakali2019}}
+    \label{fig5:spect}
+\end{figure}
+    
+\vspace{0.5cm}
+
+\pagebreak
+
+As it is known, plastic waste does not decompose immediately, therefore, when they come into contact with the salinity of the sea and solar radiation, they degrade and adhere to rocks,  transforming into microplastics,\cite{Universo} these are small particles that come from derived from oil, With an average size of 5 mm, it can be transported by wind and waves, making it a high pollutant. \cite{Ecuadortv} Furthermore, this garbage has become part of the food of different species, which could become a big problem for humans, since we feed on most fish, which are its main consumers. \cite{Comercio}
+
+This serious pollution problem affects not only beaches and oceans, but also mountains.\cite{microplastics} In Ecuador, an in-depth study on this has not been conducted, but the Pyrenees can be taken as an example of a mountain range located north of According to a National Geographic article, the Iberian Peninsula, where fragments of plastics were found Raining from the sky, "there is a daily rate of 365 microplastic particles per square meter that precipitates in the Pyrenees region of southern France." \cite{Pirineos}
+
+As can be seen in the different graphics provided by the UN, there is a wide variety of plastics Figure \ref{fig6:spect} and \ref{fig7:spect}, having different uses and applications depending on the sector in which it is necessary Figure \ref{fig8:spect}. In addition, you can see the highest productions of this pollutant in the different regions Figure \ref{fig9:spect}.
+
+Also, the UN provides an image of the hierarchy of waste management Figure \ref{fig10:spect}. In Ecuador, many of the large companies do not have a good handle on plastics, due to the fact that it supposes a higher cost in production and therefore generates losses, in the same way. people are not aware of the pollution generated each year and this is because there is no custom of recycling.
+
+\begin{figure}[h!]
+    \centering\includegraphics[scale= 0.5]{Diferencia.jpeg}
+    \caption{categorization of single-use plastics. \cite{ONU}}
+    \label{fig6:spect} 
+\end{figure}
+    
+\begin{figure}[h!]
+    \centering\includegraphics[scale= 0.5]{Plasticos.jpeg}
+    \caption{Polymers most used in the production of single-use plastics.\cite{ONU}}
+    \label{fig7:spect}
+\end{figure}
+    
+\vspace{1cm}
+
+\pagebreak
+
+\begin{figure}[h!]
+    \centering\includegraphics[scale= 0.4]{Alternativa.jpeg}
+    \caption{Plastics that replace traditionally used materials.\cite{ONU}}
+    \label{fig8:spect}
+\end{figure}
+    
+\vspace{1cm}
+
+\begin{figure}[h!]
+    \centering\includegraphics[scale= 0.4]{Continentes.jpeg}
+    \caption{Production of single-use plastics by region.\cite{ONU}}
+    \label{fig9:spect}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering\includegraphics[scale= 0.4]{jerarquia.jpeg}
+    \caption{Waste management hierarchies.\cite{ONU}}
+    \label{fig10:spect}
+\end{figure}
+
+\pagebreak
+
+
+\subsubsection{Remote sensing in plastic pollution}
+
+HERE LETS DESCRIBE PAYLOADS; INDEXES, VARIABLES MEASSURED, METHODS DEVELOPED, ETC 
+
+\subsection{Biodiversity monitoring}
+
+It is necessary to consider that the biodiversity of the Galapagos Islands is also threatened by the different species introduced voluntarily or accidentally by humans, since as they aren’t controlled, they become invasive. Invasive species are understood to be animals, plants, or other living organisms.
+
+The presence of these species is mainly due to the influence of humans, whether due to population growth, tourism, or the flow of air and sea transport.\cite{HernandezMaresPablo2016}
+
+Unconsciously, people create a perfect habitat for these species to locate in the different areas of the island, for example, a farm with poor management is abandoned, it is there that it becomes a refuge for animals.
+
+The main damage caused by invasive flora and fauna is competition for survival, exterminating the native life existing on the islands. \cite{Balmori2014}
+
+The biodiversity of the islands is highly dependent on marine life, where this problem can also occur, unlike land invasions, the marine ones are a problem generally "produced by ocean currents, land masses and temperature gradients "\cite{Jaramillo2015}. Climate changes cause invasive species to feel comfortable and find this heavenly place as their new home.
+
+To take measures it is necessary to monitor the species that are being affected by invasive species, with the results obtained, eradication methods can be applied. For this, the use of drones is also used, such as the extermination of invading rats. \cite{Munoz2012}
+
+It is not a novelty that since the arrival of the human being in the Galapagos Islands, rats were introduced in boats, nowadays they are a pest that causes a great impact on biodiversity, because they are aggressive and feed on all kinds of things like the eggs. of endangered turtles. For this reason, a drone dispersal program was applied using drones, saving time and resources.\cite{CarrereMichelle2019}
+
+One of the islands where this method is successfully applied is Seymor (a small island in the archipelago), there have never been rats there, but it is believed that they swim in search of food, so why use drones and not helicopters? Because it is a small island, you can use this equipment, in addition to being so precise, they effortlessly deposit a poison that the birds that inhabit that area do not eat.\cite{BronchalMarina2019}
+
+Through the use of unmanned aerial vehicles, the FDC (Charles Darwin Foundation) carries out mappings in different areas of the islands "to find out where the invasive fauna is, how big it is, the problems it causes and what the priority species are" \cite{LadinesRonald2019}. They have mainly concentrated on blackberry because it has so many small seeds that they spread and grow rapidly due to the weather, becoming part of the animal's food chain, but causing the extinction of other plant species.
+
+Another great use that the FDC gives to the technology is for marine studies, where specific analyzes and mapping are also carried out, with manned submarines and submersible robots, finding only until 2015, 31 new marine species.\cite{LadinesRonald2019}
+
+\subsubsection{Remote sensing for biodiversity monitoring}
+
+HERE LETS DESCRIBE PAYLOADS; INDEXES, VARIABLES MEASSURED, METHODS DEVELOPED, ETC 
+
+\subsection{Galapagos Reports}
+
+%LETS EMBED THIS ON THE PREVIOUS SECTIONS ACCORDINGLY
+
+
+There are antecedents of different compilations that were made called the "Galapagos Report", which cover topics such as human systems, tourism, biodiversity and ecosystem restoration and marine management. They have been in force since 2006 and are held every 2 years.
+
+Report between the years 2006-2007
+
+With respect to plants, 180 species were evaluated considering those evaluated in 2002 as shown in the figure \ref{fig12:spect}, where the figures and percentages of the species in each category can be observed. It should be noted that only 171 species are found because insufficient data was obtained from some plants. For 2006, 168 endemic plants were found to be considered threatened, compared to the 2002 evaluated numbers.\cite{FCD2007}
+
+\pagebreak
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[scale= 0.3]{Plantas.jpeg}
+    \caption{"Number and percentage of taxa in each threat category".\cite{FCD2007}}
+    \label{fig12:spect}
+\end{figure}
+
+With respect to vertebrates, "of the 109 endemic and native species of vertebrates, 6 became extinct before the arrival of man in the Galapagos and 7 species subsequently".\cite{FCD2007}
+
+Birds are those that have a higher degree of threat with respect to all existing fauna as can be seen in the figures \ref{fig13:spect} and \ref{fig14:spect}.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[scale= 0.3]{Vertebrados.jpeg}
+    \caption{"Number of vertebrate species according to their threat category".\cite{FCD2007}}
+    \label{fig13:spect}
+\end{figure}
+
+\vspace{1cm}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[scale= 0.3]{Barras.jpeg}
+    \caption{"Graph of percentages versus category of threat".\cite{FCD2007}}
+    \label{fig14:spect}
+\end{figure}
+
+\pagebreak
+
+Report between the years 2009-2010
+
+For these years, the introduced species are considered because it represents a great threat on the islands, taking the Floreana, Isabela, Santa Cruz and San Cristóbal islands as a monitoring site. As of 2010 there are 870 species of plants introduced. From what is known, 229 species adapted to reproduce without human help, and 131 species invade the different habitats of the archipelago. The figure \ref{fig15:spect} shows that the increase in introduced species is directly proportional to the increase in residents. To ensure survival Of the endemic species, it was proposed that people plant them in a park or garden, obtaining the results shown in the figure \ref{fig16:spect} where the different uses are observed.\cite{2010}
+
+\pagebreak
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[scale= 0.3]{Habitantes.jpeg}
+    \caption{"Number of inhabitants and plant species introduced in each of the inhabited Islands".\cite{2010}}
+    \label{fig15:spect}
+\end{figure}
+
+\vspace{1cm}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[scale= 0.3]{Usos.jpeg}
+    \caption{"Different uses associated with plants introduced to Galapagos".\cite{2010}}
+    \label{fig16:spect}
+\end{figure}
+
+\pagebreak
+
+Report between the years 2011-2012
+
+The fly is also one of the invasive species of the Galapagos Islands, this has generated a great problem in the birds attacked by an avian parasite called Philornis downsi. Flies deposit their eggs in the birds' nests, when the eggs hatch, the larvae feed on the blood and tissue of the chicks as can be seen in the figure \ref{fig17:spect}, causing disease and even death, for this reason it is done monitoring of the birds that are most affected by this type of parasite and on which islands they are mainly found.\cite{Galapagos2012}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[scale= 0.3]{Mosca.jpeg}
+    \caption{"Incubation cycle of fly larvae".\cite{Galapagos2012}}
+    \label{fig17:spect}
+\end{figure}
+
+
+Report between the years 2013-2014
+
+The migration of the Galapagos tortoises has a very important focus, since it is a unique species, they have a very important role for the ecosystem, spreading seeds and crushing the dense vegetation that forms paths. These travel long distances between the coastal and agricultural areas found in the high parts of the mountain.
+The migration of these species has been greatly affected due to agricultural expansion, hunting and the placement of barriers that prevent their passage, for this reason it is necessary to continuously monitor these animals during their migration, at this time it was carried out by GPS that it was placed in the shells of these as can be seen in the figure \ref{fig18:spect}, showing the constant movement made during its transnational's figure \ref{fig19:spect}.\cite{1389}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[scale= 0.3]{Tortuga.jpeg}
+    \caption{"Male giant tortoise from the population of the Santa Cruz Island reserve with a GPS marker".\cite{1389}}
+    \label{fig18:spect}
+\end{figure}
+
+\pagebreak
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[scale= 0.3]{Trayecto.jpeg}
+    \caption{"Traces of movement of giant tortoises on Santa Cruz Island".\cite{1389}}
+    \label{fig19:spect}
+\end{figure}
+
+\pagebreak
+
+Report between the years 2015-2016
+
+The blackberry is a plant that dominates in terms of invasion of habitats in the different islands, since it prevents the growth of endemic plants of the place, positioning itself as a new resident of the place where it bursts. This plant causes a change in the habitat of some species, such as birds or invertebrates, for this reason, the monitoring of two types of threatened birds is the song finch and the small tree finch.\cite{2016}
+
+When taking control measures, in the area of the Twins it was divided by quadrants where there is a reference area and a controlled area as shown in the figure \ref{fig20:spect} where the thickness of the blackberry plants was manually removed, after two months this place spray new shoots with herbicide.\cite{2016}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[scale= 0.3]{Mora.jpeg}
+    \caption{"Blackberry study site located in Gemelos".\cite{2016}}
+    \label{fig20:spect}
+\end{figure}
+
+\pagebreak
+
+After the fumigation of this plant, another monitoring was carried out where a large number of spiders were found, and through the use of Malaise traps around 16 184 specimens were captured and 766 with Pitfall traps, these were studied figure \ref{fig21:spect}, due to the invertebrate dynamics. they are difficult to monitor and draw conclusions. \cite{2016}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[scale= 0.3]{Invertebrados.jpeg}
+    \caption{"Total number of invertebrates captured with Malaise traps and Pitfall traps".\cite{2016}}
+    \label{fig21:spect}
+\end{figure}
+
+
+As for the birds, after the control of the plant, there was success in the reproduction of the song finch and the small tree finch, although in the controlled and reference areas there is not a great variation as shown in the figure \ref{fig22:spect}.\cite{2016}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[scale= 0.3]{Aves.jpeg}
+    \caption{"Percentage of successful Song finch and Small tree finch nests".\cite{2016}}
+    \label{fig22:spect}
+\end{figure}
+
+Report between the years 2017-2018
+
+The study of marine fauna is also essential for the conservation of the archipelago's biodiversity, in this place is the Galapagos Marine Reserve, "created in 1998 as one of the last refuges that protects the marine megafauna from the multiple threats that affect their populations. " globally, including industrial fishing and habitat degradation”.\cite{DDU-UNAM2018}
+
+Because many species are migratory, constant monitoring is difficult, if species leaving the reserve are vulnerable to many hazards such as fishing. When information or counts are obtained from the fish, this is not long term due to the great variability that exists outside the refuge.\cite{DDU-UNAM2018}
+
+One of the monitoring options that has been a great success is the use of the Shark Count application, which allows obtaining data and information on shark sightings at different sites, which makes it easy to carry out an updated count of this type of species. as shown in the figure \ref{fig23:spect}.\cite{DDU-UNAM2018}
+
+\begin{figure}[h!]
+    \centering 
+    \includegraphics[scale= 0.3]{Tiburones.jpeg}
+    \caption{"Total number of individuals of different species reported in the application".\cite{DDU-UNAM2018}}
+    \label{fig23:spect}
+\end{figure}
+
+
+\subsection{UAV Remote sensing potential applications}
+
+
+\section{Objectives}
+
+\begin{itemize}
+    \item Revise regulations about remote sensing tools implemented in Galápagos
+    \item Collect imagery over the pilot zones and assess their suitability for biodiversity recognition.
+    \item Develop a methodology for monitoring biodiversity in the Galápagos Islands with UAVs 
+\end{itemize}
+
+\chapter{Regulations for operation in Galapagos of UAVs and remote sensing tools}\label{chapt:doe}
+[\textit{Describe the guidelines and regulations for monitoring.}]
+
+\chapter{Data acquisition and processing}\label{chapt:model}
+[\textit{Describe thoroughly the payloads used (cameras: Sony RC10 and micasense Redege multispectral camera, explain their use implemented in Event 384  UAV with Mission planner, describe also the postprocessing tools such as: PIX4D, Micasense redege software.}]
+\section{UAV selection}
+\section{Data gathering}
+\section{Flight deployment}
+\section{Mission profile}
+
+\chapter{Methodology}\label{chapt:results}
+[\textit{ Report the method used for monitoring in Galapagos, ref to paper we will provide}]
+\section{Scheme of the framework for monitoring through UAVs}
+\subsection{Constraints of the method and future work}
+% \section{Test 2} ... as needed
+
+\chapter{Results and discussion}
+
+\section{Ortomosaics and processed images}
+
+
+\section{Suitability of the monitroing framework for monitoing}
+
+\chapter{Conclusions}
+
+\pagebreak
+
+
+% Adding a bibliography if citations are used in the report
+\bibliographystyle{plain}
+\bibliography{Bibliography.bib}
+% Adds reference to the Bibliography in the ToC
+\addcontentsline{toc}{chapter}{\bibname}
+
+\pagebreak
+
+\chapter*{Appendix A: Resources}
+[\textit{Any Figure, document, regulation, giude for operation useful for the document}]
+\section*{Regulations}
+\section*{Operation guidelines}
+% \section{Reference solution data}
+
+
+\end{document}
